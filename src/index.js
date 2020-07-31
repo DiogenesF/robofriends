@@ -10,6 +10,8 @@ import { createLogger } from "redux-logger";
 import { searchRobots, requestingRobots } from "./redux/reducers";
 import MainComponent from "./containers/MainComponent";
 
+import * as serviceWorker from "./serviceWorker";
+
 const logger = createLogger();
 const rootReducer = combineReducers({
   searchRobots,
@@ -23,3 +25,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+serviceWorker.register();
